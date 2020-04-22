@@ -22,6 +22,7 @@ namespace RecipiesApp.API.Controllers
         }
         // GET api/values
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetRecipes()
         {
             var result = await _context.Recipes.ToListAsync();

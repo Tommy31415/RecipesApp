@@ -41,7 +41,7 @@ namespace RecipesApp.API.Controllers
             return StatusCode(201);
         }
 
-        [HttpPost("register")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(UserToLoginDto userToLoginDto)
         {
             var userFromRepo = await _authRepository.Login(userToLoginDto.Username.ToLower(), userToLoginDto.Password);
