@@ -23,6 +23,9 @@
     "alertifyjs": "^1.13.1",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "ngx-bootstrap": "^5.6.1",
+    "popper.js": "^1.16.0",
     "rxjs": "^6.5.5",
     "tslib": "^1.11.2",
     "zone.js": "~0.10.2"
