@@ -11,5 +11,6 @@ namespace RecipiesApp.API.Data
 
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }
