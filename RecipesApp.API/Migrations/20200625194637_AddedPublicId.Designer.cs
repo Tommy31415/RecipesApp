@@ -9,8 +9,8 @@ using RecipiesApp.API.Data;
 namespace RecipesApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200521053631_AddUserClass")]
-    partial class AddUserClass
+    [Migration("20200625194637_AddedPublicId")]
+    partial class AddedPublicId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,9 @@ namespace RecipesApp.API.Migrations
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("PublicId")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");

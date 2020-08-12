@@ -23,7 +23,7 @@ namespace RecipesApp.API.Migrations
                     LastActive = table.Column<DateTime>(nullable: false),
                     Introduction = table.Column<string>(nullable: true),
                     LookingFor = table.Column<string>(nullable: true),
-                    Intrests = table.Column<string>(nullable: true),
+                    Interests = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true)
                 },

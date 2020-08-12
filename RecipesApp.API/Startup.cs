@@ -14,6 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using RecipesApp.API.Data;
 using RecipesApp.API.Helpers;
 using RecipiesApp.API.Data;
+using Microsoft.OpenApi.Models;
 
 namespace RecipiesApp.API
 {
@@ -34,6 +35,7 @@ namespace RecipiesApp.API
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(RecipesRepository).Assembly);
             services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddScoped<IRecipesRepository,RecipesRepository>();
@@ -46,6 +48,10 @@ namespace RecipiesApp.API
                         ValidateAudience = false
                     };
                 });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RecipesApp API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +87,12 @@ namespace RecipiesApp.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
     }

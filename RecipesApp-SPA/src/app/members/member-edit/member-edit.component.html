@@ -46,7 +46,7 @@
             <h4>Looking for</h4>
             <textarea name="lookingFor" rows="7" class="form-control" [(ngModel)]="user.lookingFor"></textarea>
             <h4>Interests</h4>
-            <textarea name="interests" rows="7" class="form-control" [(ngModel)]="user.intrest"></textarea>
+            <textarea name="interests" rows="7" class="form-control" [(ngModel)]="user.interests"></textarea>
             <h4>Location details:</h4>
             <div class="form-location">
               <label for="city">City</label>
@@ -57,8 +57,7 @@
           </form>
           </tab>
           <tab heading="Edit photos">
-            <h4>Interests</h4>
-            <p>{{user?.intrest}}</p>
+            <app-photo-editor [photos]="user.photos"></app-photo-editor>
           </tab>
           
         </tabset>
